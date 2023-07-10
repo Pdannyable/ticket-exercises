@@ -1,0 +1,13 @@
+GitHub actions
+- tool to automate software development workflows
+- write individual tasks, called actions, -workflows
+- Git repo - push, pr, issue, schedule == events
+- events can be used to trigger workflows
+- workflows run on vm inside of a GitHub server
+- vm = linux, windows, macOs, docker container
+- runners - the vm - GitHub hosted / self hosted runners = ec2 = install runner software
+- workflows=> jobs = each job runs on its own dedicated vm
+- workflows are created in YAML format
+- Each job has single or multiple steps = tasks/actions
+- create .github/workflows/simple.yaml
+- 
