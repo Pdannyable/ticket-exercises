@@ -19,6 +19,10 @@ jobs:
     steps:
       - name: Directory
         run: Get-Location
+      - name: release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       #- name: Directory using bash
       #  run: pwd
       #  shell: bash
