@@ -3,10 +3,6 @@ name: shell commands
 on: [push]
 
 jobs:
-  permissions:
-    contents: write
-    issues: write
-    pull-requests: write
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
@@ -19,6 +15,10 @@ jobs:
           node -v
           pwd
   run-windows-commands:
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     runs-on: windows-latest
     steps:
       - name: Directory
@@ -27,6 +27,6 @@ jobs:
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      #- name: Directory using bash
-      #  run: pwd
-      #  shell: bash
+      - name: Directory using bash
+        run: pwd
+        shell: bash
